@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vishal's Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #f5f5f5;
+            color: #333;
+        }
+        ._header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #000;
+            color: #fff;
+            padding: 10px 20px;
+        }
+        .nav-links {
+            display: flex;
+            gap: 20px;
+        }
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .burger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+        }
+        .burger div {
+            width: 25px;
+            height: 3px;
+            background-color: #fff;
+            margin: 4px;
+        }
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                background: #fff;
+                color: #000;
+                position: absolute;
+                top: 60px;
+                right: 10px;
+                padding: 10px;
+                border-radius: 5px;
+                box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            }
+            .nav-links.show {
+                display: flex;
+            }
+            .burger {
+                display: flex;
+            }
+        }
+        #home {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 90vh;
+            text-align: center;
+            background: linear-gradient(to right, #3f87a6, #ebf8e1, #f69d3c);
+        }
+        #home img {
+            border-radius: 50%;
+            width: 200px;
+            height: 200px;
+            object-fit: cover;
+            margin-bottom: 20px;
+        }
+        #home h1 {
+            margin: 0;
+            font-size: 40px;
+            color: #000;
+        }
+        #home p {
+            font-size: 20px;
+            color: #333;
+        }
+        .abt_, .project_, .skills_, .contact_, .resume_ {
+            max-width: 1000px;
+            margin: 50px auto;
+            padding: 20px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        .abt_ img, .project_ img {
+            max-width: 100%;
+            border-radius: 10px;
+        }
+        /* ._my {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+        } */
+        .skills-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+        .skill-item {
+            text-align: center;
+        }
+        .skill-item img {
+            width: 60px;
+            height: 60px;
+        }
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #000;
+            color: white;
+        }
+        .resume-btn {
+            display: block;
+            text-align: center;
+            margin: 20px auto;
+            background-color: #007BFF;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            max-width: 200px;
+        }
+        .contact_{
+            display: flex;
+            column-gap: 70px;
+            text-align: justify;
+            justify-content:center;
+        }
+    </style>
+</head>
+<body>
+    <header class="_header">
+        <div class="burger" onclick="toggleMenu()">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <div class="nav-links" id="navLinks">
+            <a href="#home">Home</a>
+            <a href="#about">About Me</a>
+            <a href="#project">Project</a>
+            <a href="#skills">Skills</a>
+            <a href="#contact">Contact</a>
+        </div>
+    </header>
+
+    <section id="home">
+        <img src="https://lh3.googleusercontent.com/pw/AP1GczPv6_ZgJMlnvJBXSI0g8mhBDIiUHIOZattkZLvk3_cMp0gS_eafydE4oD9Dt4mJc4QoR6rzurppTj54KrgbOJUMDbno1mrb5Fim3QCAITHjyvXi8DvILc85thig_3Nmhtxnc_e5yVnXoQXK9SPk7Tff=w958-h914-s-no" alt="Vishal">
+        <h1>I'm Vishal</h1>
+        <p>Full Stack Developer in the Making 🚀</p>
+    </section>
+
+    <div class="abt_" id="about">
+        <h2>About Me</h2>
+        <div class="_my">
+            <div>
+                <p>I am currently pursuing a Bachelor's degree in Computer Applications (BCA) and simultaneously enhancing my skills through a Full Stack Development course. I have hands-on experience with HTML, CSS, JavaScript, React, Node.js, MySQL and MongoDB. My goal is to build scalable web applications and keep learning new technologies.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="project_" id="project">
+        <h2>Projects</h2>
+        <div class="_my">
+            <img src="https://via.placeholder.com/300x200?text=Project+1" alt="Project Image">
+            <div>
+                <p>1. Personal Portfolio Website: Created a responsive website using HTML, CSS, JavaScript to showcase my work.</p>
+                <a href="#" target="_blank">View Project</a>
+                <p>2. Quiz Program: Designed a landing page using HTML, CSS, and JSON for Qvesys competition.</p>
+                <a href="/Quiz context/index.html" target="_blank">View Project</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="skills_" id="skills">
+        <h2>Skills</h2>
+        <div class="skills-grid">
+            <div class="skill-item"><img src="https://cdn-icons-png.flaticon.com/512/732/732212.png" alt="HTML"><p>HTML</p></div>
+            <div class="skill-item"><img src="https://cdn-icons-png.flaticon.com/512/732/732190.png" alt="CSS"><p>CSS</p></div>
+            <div class="skill-item"><img src="https://cdn-icons-png.flaticon.com/512/5968/5968292.png" alt="JavaScript"><p>JavaScript</p></div>
+            <div class="skill-item"><img src="https://cdn-icons-png.flaticon.com/512/919/919854.png" alt="Java"><p>Java</p></div>
+            <div class="skill-item"><img src="https://cdn-icons-png.flaticon.com/512/4248/4248443.png" alt="MySQL"><p>MySQL</p></div>
+            <div class="skill-item"><img src="https://cdn-icons-png.flaticon.com/512/919/919836.png" alt="MongoDB"><p>MongoDB</p></div>
+        </div>
+    </div>
+
+    <div class="resume_">
+        <a class="resume-btn" href="Vishal Resume - Copy.pdf" download>See My Resume</a>
+    </div>
+
+    <div class="contact_" id="contact">
+        <section>
+            <h2>Contact Me</h2>
+        <form>
+            <label>Name:</label><br>
+            <input type="text" name="name" required><br><br>
+            <label>Email:</label><br>
+            <input type="email" name="email" required><br><br>
+            <label>Message:</label><br>
+            <textarea name="message" rows="5" required></textarea><br><br>
+            <button type="submit">Send</button>
+        </form>
+        </section>
+        <section>
+             <h1>Contact Details:</h1>
+        <h4>Phone: +91 9524254949</h4>
+        <h4>Email: vishalsivakumar1110@gmail.com</h4>
+        <h4>Address: Veppathur, Kumbakonam - 612105</h4>
+        </section>
+    </div>
+
+    <footer>
+        <p>Follow me:</p>
+        <a href="https://www.instagram.com/vishal_1_1_0_4/profilecard/?igsh=bWE0cHNzbDhzZ3dj"><i class="fa-brands fa-instagram"></i></a>
+        <a href="#"><i class="fa-brands fa-facebook"></i></a>
+        <a href="https://github.com/vishalsivakumar-2004"><i class="fa-brands fa-github"></i></a>
+        <a href="#"><i class="fa-brands fa-twitter"></i></a>
+        <a href="#"><i class="fa-brands fa-hackerrank"></i></a>
+        <a href="https://www.linkedin.com/in/vishal-sivakumar"><i class="fa-brands fa-linkedin"></i></a>
+    </footer>
+
+    <script>
+        function toggleMenu() {
+            const nav = document.getElementById('navLinks');
+            nav.classList.toggle('show');
+        }
+    </script>
+</body>
+</html>
